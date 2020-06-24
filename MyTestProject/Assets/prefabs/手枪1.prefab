@@ -44,7 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b852a3257a602284fb84f980be9383f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullets: []
+  bullets:
+  - {fileID: 1840245036495543276, guid: 34c0b016003142d44aeac5c0c85d38cb, type: 3}
+  - {fileID: 177683745764020155, guid: 334aced060a9d104985212bed938956c, type: 3}
+  - {fileID: 173665983644911866, guid: b251822e460e66e44a621a124e6d7a00, type: 3}
+  isUsed: 0
+  speed: 1000
 --- !u!212 &2967861951736677631
 SpriteRenderer:
   m_ObjectHideFlags: 0

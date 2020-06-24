@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+    // 武器使用者
+    public GameObject master { set; get; }
     void Start()
     {
         
@@ -17,8 +18,21 @@ public class bullet : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.name != "bullet") {
+        if (collider.gameObject.GetComponent<bullet>() != null) {
             Destroy(gameObject);
+        }
+        
+        if (master != collider.gameObject) 
+        {
+            if (collider.gameObject.name == "主角1") {
+                collider.gameObject.GetComponent<leadingRole>().changeHealth(1);
+                Destroy(gameObject);
+            }
+            if (collider.gameObject.GetComponent<enermy>() != null)
+            {
+                collider.gameObject.GetComponent<enermy>().changeHealth(1);
+                Destroy(gameObject);
+            }
         }
     }
 }
